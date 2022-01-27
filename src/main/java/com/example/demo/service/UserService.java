@@ -9,6 +9,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 @AllArgsConstructor
 public class UserService implements UserDetailsService {
@@ -45,5 +47,15 @@ public class UserService implements UserDetailsService {
 
         return user;
 
+    }
+
+    public Optional<AppUser> findUserById (Long userId) {
+        return Optional.ofNullable(userRepository.findById(userId).orElseThrow(
+                () -> new IllegalStateException("User with id" + userId + " does not exist")
+        ));
+    }
+
+    public void deleteById(Long userId){
+        userRepository.deleteById(userId);
     }
 }
