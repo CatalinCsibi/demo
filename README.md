@@ -1,4 +1,4 @@
-Login Logout DEmo Spring Security
+Login Logout Demo Spring Security
 
 Simple login/logout application
 

@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.dto.RegistrationRequest;
 import com.example.demo.model.user.AppUser;
 import org.junit.Test;
 import org.junit.runner.RunWith;
